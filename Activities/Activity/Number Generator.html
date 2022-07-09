@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Number Generator</title>
+
+<style type="text/css">
+
+</style>
+
+</head>
+<body>
+<center>
+<h1>NUMBER GENERATOR</h1>		
+<select id="numberGen">
+	<option value="0">Select</option>
+	<option value="1">1</option>
+	<option value="2">2</option>
+	<option value="3">3</option>
+	<option value="4">4</option>
+	<option value="5">5</option>
+	<option value="6">6</option>
+	<option value="7">7</option>
+	<option value="8">8</option>
+	<option value="9">9</option>
+	<option value="10">10</option>
+</select>
+		
+	<button  onclick="myFunction(1, 50)">Generate</button>
+	<div id="disp"></div>
+	<div id="disp2"></div>
+</center>
+</body>
+
+<script type="text/javascript">
+	function myFunction (min, max){
+		var num = [];
+		var size;
+		size = parseInt(document.getElementById('numberGen').value);
+
+		for (var i = 0; i < size; i++) {
+			var add = true;
+			var randomNumber = Math.floor(Math.random() * max) + 1 + '</br>';
+			for (var j = 0; j < max; j++) {
+				if( num[j] == randomNumber) {
+					add = false;
+				}
+			}
+			if (add) {
+				num.push(randomNumber);
+			} else {
+				i--;
+			}
+		}
+			var highNum = 0;
+			for (var k = 0; k < num.length; k++) {
+				for (var l = k + 1; l < num.length; l++) {
+					if (num[l] < num[k]) {
+						highNum = num[k];
+						num[k] = num[l];
+						num[l] = highNum;
+					} 
+				}
+			}
+	console.log(num);
+	document.getElementById("disp").innerHTML = num.join(" ");
+ 	
+
+ 	for (var i = 0; i < size; i++)
+ 	{
+ 
+	if (num.length % 2 == 0)
+	{
+		result = "The " + i + " number is Even";
+	}
+	else
+	{
+		result = "The " + i + " number is Odd";
+	}
+	document.getElementById("disp2").innerHTML += "<br> " +result;
+	}
+
+}
+
+
+</script>
+
+</html>

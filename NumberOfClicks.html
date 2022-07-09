@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sample</title>
+</head>
+<body>
+	<button onclick="displaycount()">Click here</button>
+	<p id="carrier">0</p>
+
+</body>
+</html>
+
+<script type="text/javascript">
+
+var count = (function(num){
+
+var counter=1;
+return function () {return counter++;}
+
+})();
+console.log();
+function displaycount(){
+
+document.getElementById("carrier").innerHTML = count();
+}
+</script>

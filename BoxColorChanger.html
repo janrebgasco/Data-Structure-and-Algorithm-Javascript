@@ -1,0 +1,41 @@
+<!DOCTYPEhtml>
+<html>
+<head>
+<title>BoxColorChanger</title>
+<style type="text/css">
+.box{
+	height:100px;
+	width:100px;
+	border:solid;
+	margin:auto;
+</style>
+</head>
+<body>
+<div id="box"class="box">
+</div>
+<br/>
+<center>
+<button onclick="change_color()">CHANGE</button>
+</center>
+</body>
+<script type="text/javascript">
+	var tmp=0, color_name="";
+	function change_color()
+	{
+			tmp++;document.getElementById('box').style.background=colors(tmp);
+	}
+		function colors(num){
+			switch(num){
+				case 1: color_name="red";break;
+				case 2: color_name="blue";break;
+				case 3: color_name="green";break;
+				case 4: color_name="yellow";break;
+				case 5: color_name="pink";break;
+				case 6: color_name="grey";break;
+				default: color_name="white";break;
+			}
+			if(tmp>=7){tmp=0;}
+			return color_name;
+		}
+</script>
+</html>

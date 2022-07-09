@@ -1,0 +1,63 @@
+p
+{
+	font-family: Times new Roman;
+	font-size: 60px;
+	text-align: center;
+	
+}
+p#text
+{
+	font-family: Times new Roman;
+	font-size: 25px;
+	text-align: center;
+	color: white;	
+}
+body
+{
+	background-color: black; 
+	background-size: 100% 100%;
+}
+.Box
+{
+	width: 75px;
+	height: 75px;
+	border:solid white;
+	margin-top: 20px;
+	margin-left: 20px;
+}
+.inlineBlock
+{
+	display: inline-block;
+}
+.block
+{
+	display: block;
+}
+#box1,#box8
+{
+	background:red;
+}
+#box2,#box9
+{
+	background:orange;
+}
+#box3,#box10
+{
+	background:yellow;
+}
+#box4
+{
+	background:green;
+}
+#box5
+{
+	background:blue;
+}
+#box6
+{
+	background:indigo;
+}
+#box7
+{
+	background:violet;
+}

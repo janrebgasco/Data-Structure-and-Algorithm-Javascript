@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Student Number</title>
+</head>
+<body>
+	<link rel="stylesheet" type="text/css" href="">
+<input type="date" id="taon" onchange="pinalit()">
+<select id="cboCampus">
+	<option value="M">Main</option>
+	<option value="C">Camarin</option>
+</select>
+<br/>
+<button onclick="funcGen()">Click Me</button>
+<br/>
+<p id="disp"></p>
+</body>
+
+<script type="text/javascript">
+	var countC = 0;
+	var countM = 0;
+	var valueCatcher = 0;
+	var studentNo,campus;
+	var array = [];
+	var Newyear = [];
+	campus = document.getElementById('cboCampus').value;
+	console.log(campus);
+	var NewcountC= 0;
+	var NewcountM=0;
+	var count = 0;
+	function funcGen()
+	{	
+		var d = new Date(document.getElementById('taon').value);
+		var yearOnly = d.getFullYear();
+		document.getElementById('disp').innerHTML = "";
+		campus = document.getElementById('cboCampus').value;
+		Newyear.push(yearOnly);
+		count++;
+		if(yearOnly != 2019 && campus == "C")
+		{
+			valueCatcher = NewcountC;
+			NewcountC++;
+		}
+		else if(Newyear[0] == 2019 && campus == "C")
+		{
+					countC++
+					valueCatcher = countC;
+		}
+		if(yearOnly != 2019 && campus == "M")
+		{
+			valueCatcher = NewcountM;
+			NewcountM++;
+		}
+		else if(Newyear[0] == 2019 && campus == "M")
+		{
+					countM++
+					valueCatcher = countM;
+		}
+		console.log(NewcountC,countC,NewcountM,countM);
+		if(valueCatcher >= 1 && valueCatcher <=9)
+		{
+			array.push(""+yearOnly+""+"000"+valueCatcher+"-"+campus+"");
+						
+		}
+		if(valueCatcher >= 10 && valueCatcher <=99)
+		{
+			array.push(""+yearOnly+""+"00"+valueCatcher+"-"+campus+"");
+		}
+		if(valueCatcher >= 100 && valueCatcher <=999)
+		{
+			array.push(""+yearOnly+""+"0"+valueCatcher+"-"+campus+"");
+		}
+		if(valueCatcher >= 1000 && valueCatcher <=9999)
+		{
+			array.push(""+yearOnly+""+""+valueCatcher+"-"+campus+"");
+		}
+
+		for (var i = 0 ;i<array.length;i++)
+		{
+			    
+			document.getElementById('disp').innerHTML += array[i] +"<br>";
+		}
+}
+
+	
+
+function pinalit()
+{
+		
+	
+}
+
+
+
+</script>
+</html>

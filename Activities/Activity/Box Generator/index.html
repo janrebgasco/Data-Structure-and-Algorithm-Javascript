@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Box Generator</title>
+</head>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script type="text/javascript" src="js/script.js"></script>
+<body>
+
+<p>
+  <span style='color: red'>B</span>
+  <span style='color: orange'>O</span>
+  <span style='color: yellow'>X</span>
+  <span style='color: green'>_</span>
+  <span style='color: blue'>G</span>
+  <span style='color: indigo'>E</span>
+  <span style='color: violet'>N</span>
+  <span style='color: red'>E</span>
+  <span style='color: orange'>R</span>
+  <span style='color: yellow'>A</span>
+  <span style='color: green'>T</span>
+  <span style='color: blue'>O</span>
+  <span style='color: indigo'>R</span> 
+   <span style='color: green'>.</span>
+  <span style='color: green; font-style:italic;'>E</span>
+  <span style='color: green; font-style:italic;'>X</span>
+  <span style='color: green; font-style:italic;'>E</span> 
+ </p>
+<table col="2" style="width: 100%;">
+<tr>
+<td><p id="text" >
+  <span style='color: blue'>H</span>
+  <span style='color: red'>e</span>
+  <span style='color: yellow'>i</span>
+  <span style='color: blue'>g</span>
+  <span style='color: green'>h</span>
+  <span style='color: red'>t</span></p>
+<center>	
+<select style="width: 40px; height: 25px;" id="cboNumberOfHeight" onchange="displayHeight()">
+	<option value="0">0</option>
+	<option value="1">1</option>
+	<option value="2">2</option>
+	<option value="3">3</option>
+	<option value="4">4</option>
+	<option value="5">5</option>
+	<option value="6">6</option>
+	<option value="7">7</option>
+	<option value="8">8</option>
+	<option value="9">9</option>
+	<option value="10">10</option>
+</select>
+</center>
+</td>
+<td>
+<p id="text" >
+<span style='color: blue'>W</span>
+  <span style='color: red'>i</span>
+  <span style='color: yellow'>d</span>
+  <span style='color: blue'>t</span>
+  <span style='color: red'>h</span></p>
+<center>
+<select style="width: 40px; height: 25px;" id="cboNumberOfWidth" onchange="displayWidth()">
+	<option value="0">0</option>
+	<option value="1">1</option>
+	<option value="2">2</option>
+	<option value="3">3</option>
+	<option value="4">4</option>
+	<option value="5">5</option>
+	<option value="6">6</option>
+	<option value="7">7</option>
+	<option value="8">8</option>
+	<option value="9">9</option>
+	<option value="10">10</option>
+</select>
+</center>
+</td>
+</tr>
+</table>
+<center>
+<div id="disp"></div>
+</center>
+</body>
+</html>

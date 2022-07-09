@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>RandomBoxNumber</title>
+<style type="text/css">
+.box{
+		height:40px;
+		width:40px;
+		border-radius:50px;
+		text-align:center;
+	}
+#change{
+	position: relative;
+	right: 120px;
+	top: -290px;
+	float: right;
+}
+</style>
+</head>
+<body>
+<center>
+<h1>Finals</h1>
+<table id="tblNum"border="1">
+</table>
+<br/>
+<button onclick="gen()" id="change">Change</button>
+</center>
+</body>
+<script type="text/javascript">
+
+	var i,I,disp="",num=0;
+	for(i=1;i<=10;i++){
+	disp+='<tr>';
+	for(I=1;I<=20;I++){
+		disp+='<td><div id="b'+num+'"class="box"></div></td>';
+		}
+		disp+='</tr>';
+	}
+	document.getElementById('tblNum').innerHTML=disp;
+	function gen(){
+		var i,I,disp="",num=0;
+	for(i=1;i<=10;i++){
+	disp+='<tr>';
+	for(I=1;I<=20;I++){
+		var num =Math.floor(Math.random()*10)+1;
+		disp+='<td><div id="b'+num+'"class="box">'+num+'</div></td>';
+		}
+		disp+='</tr>';
+	}
+	document.getElementById('dispCicle').innerHTML=disp;
+	}
+	// Construct Single Node
+	class Node {
+  	constructor(data, next = null) {
+    this.data = data;
+    this.next = next;
+  }
+}
+
+// Create/Get/Remove Nodes From Linked List
+class LinkedList {
+  constructor() {
+    this.head = null;
+    this.size = 0;
+  }
+
+  // Insert first node
+  insertFirst(data) {
+    this.head = new Node(data, this.head);
+    this.size++;
+  }
+
+  // Insert last node
+  insertLast(data) {
+    let node = new Node(data);
+    let current;
+
+    // If empty, make head
+    if (!this.head) {
+      this.head = node;
+    } else {
+      current = this.head;
+
+      while (current.next) {
+        current = current.next;
+      }
+
+      current.next = node;
+    }
+
+    this.size++;
+
+  }
+  printListData() {
+    let current = this.head;
+
+    while (current) {
+      console.log(current.data);
+      current = current.next;
+    }
+    document.getElementById('disp').innerHTML=current;
+  }
+}
+
+	const ll = new LinkedList();
+	ll.insertFirst(1);
+	ll.insertFirst(2);
+
+	ll.printListData();
+	</script>
+	</html>

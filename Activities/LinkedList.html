@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Print</title>
+</head>
+<style type="text/css">
+	.box
+	{
+		height: 50px;
+		width: 50px;
+		border: solid; 
+		display: inline-block;
+	}
+</style>
+<body>
+	
+		<h2>Traverse</h2>
+		<h3>Output</h3>
+		<div id="disp"></div>
+	
+</body>
+<script type="text/javascript">
+
+class Node
+		{
+			constructor(data,next = null)
+			{
+			this.data= data;
+			this.next=next;
+			}
+		}
+class LinkedList
+		{
+			constructor()
+			{
+				this.head = null;
+				this.size = 0;
+			}
+
+			insertFirstIndex(data)
+			{
+				this.head = new Node(data,this.head);
+				this.size++;
+			}
+			insertLastIndex(data)
+			{
+				var node = new Node(data);
+				var current;
+
+				//if empty....//
+				if(!this.head)
+				{
+					this.head = node;
+				}	
+				else
+				{
+					current = this.head;
+
+					while(current.next)
+					{
+						current = current.next;
+					}
+				}
+				current.next=node;
+				this.size++;
+			}
+			insertAtIndex(data,index)
+			{
+				if(index > 0 && index > this.size)
+				{
+					return;
+				}
+				if(index === 0)
+				{
+					this.head = new Node(data,this.head);
+					return;
+				}
+
+				var node = new Node(data);
+				var current,previous;
+
+				current = this.head;
+				var count = 0;
+
+				while(count < index)
+				{
+					previous = current; //node before index
+					count++;
+					current = current.next;// node after index
+				}
+				node.next = current;
+				previous.next = node;
+
+				this.size++;
+			}
+			getAtIndex(index)
+			{
+				var current = this.head;
+				var count = 0;
+
+				while(current)
+				{
+					if(count === index)
+					{
+						document.getElementById('disp').innerHTML = current.data;
+					}
+					count++;
+					current = current.next;
+				}
+				return null;
+			}
+			removeAtIndex(index)
+			{
+				if(index>0 && index > this.size)
+				{
+					return;
+				}
+				var current = this.head;
+				var previous;
+				var count = 0;
+
+				if(index === 0)
+				{
+					this.head = current.next;
+				}
+				else
+				{
+					while(count < index)
+					{
+						count++;
+						previous = current;
+						current = current.next;
+					}
+					previous.next = current.next;
+				}
+				this.size--;
+
+			}
+			printList()
+			{
+				var currentData = this.head;
+				var stringContainer = "";
+
+				for (var i = 0;i<this.size;i++)
+				{
+					stringContainer += currentData.data;
+					currentData = currentData.next;
+				}
+					document.getElementById('disp').innerHTML += stringContainer;
+					console.log(this.head);
+			}	
+
+	    }
+	    var random = Math.floor(Math.random()*99)+1;
+	    var random1 = Math.floor(Math.random()*99)+1;
+	    var random2 = Math.floor(Math.random()*99)+1;
+	    var random3 = Math.floor(Math.random()*99)+1;
+	    var i = 0
+	    var ll = new LinkedList();
+	   	ll.insertFirstIndex('');
+	    for (i = 0;i<10;i++)
+	    {
+	    	var box = '<div class="box" id="box'+i+'"></div>';
+	    	ll.insertLastIndex(box);
+	    }
+	    
+	    console.log(random);
+				
+				ll.insertFirstIndex(box);
+				ll.insertLastIndex(random1);
+				ll.insertLastIndex(random2);
+				//ll.insertLastIndex(random3);
+				//ll.insertAtIndex("Charles",3);
+				//ll.getAtIndex(2);
+				//ll.removeAtIndex(1);
+				ll.printList();
+
+
+</script>
+
+</html>
